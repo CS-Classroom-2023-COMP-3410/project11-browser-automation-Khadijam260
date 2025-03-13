@@ -77,7 +77,6 @@ async function searchRepositories(query) {
             console.error("Follow list button not found!");
         }
 
-
         // checking if the node libraries list is already created
         await page.waitForSelector('.form-control.js-user-list-input.js-characters-remaining-field', {visible: true});
         const listCreated = await page.evaluate(() => {
@@ -167,8 +166,6 @@ async function searchRepositories(query) {
             const safeQuery = query.replace(/[\/\\:*?"<>|]/g, "_"); // Replace invalid filename characters
             await page.screenshot({ path: `${safeQuery}_final_screenshot.png` });
         } 
-
-
 
         await browser.close();
  
